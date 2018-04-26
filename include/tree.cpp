@@ -57,8 +57,7 @@ public:
 			return result;
 		}
 		else{
-			compare(one->left,other->left, result);
-			compare(one->right,other->right, result);
+			return(compare(one->left,other->left, result) && compare(one->right,other->right, result));
 		}
 	}
 
