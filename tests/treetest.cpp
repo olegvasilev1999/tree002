@@ -21,7 +21,7 @@ TEST_CASE("insert and remove")
       "------------9\n"
       "--------7\n"
       "-----------------4\n"
-      "-------------3\n"};
+      "------------3\n"};
   tree_t<int> Tree;
   
   Tree.insert(10);
@@ -69,6 +69,15 @@ TEST_CASE("initializer_list")
 }
 
 
+TEST_CASE("find")
+{
+  tree_t<int> Tree{10,12,11,14,7,9,6,3,4};
+  
+  REQUIRE( (Tree.find(6)) == true );
+  REQUIRE( (Tree.find(1)) == false );
+}
+
+
 TEST_CASE("operator ==")
 {
   tree_t<int> Tree1{10,12,11,14,7,9,6,3,4};
@@ -81,10 +90,4 @@ TEST_CASE("operator ==")
   REQUIRE( (Tree1 == Tree2) == false );
 }
 
-TEST_CASE("find")
-{
-  tree_t<int> Tree{10,12,11,14,7,9,6,3,4};
-  
-  REQUIRE( (Tree.find(6)) == true );
-  REQUIRE( (Tree.find(1)) == false );
-}
+
