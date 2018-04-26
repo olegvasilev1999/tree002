@@ -91,7 +91,7 @@ TEST_CASE("find")
 {
   tree_t<int> Tree{10,12,11,14,7,9,6,3,4};
   
-  REQUIRE( (Tree.find(6);) == true );
-  REQUIRE( (Tree.find(1);) == false );
+  REQUIRE( (Tree.find(6)) == true );
+  REQUIRE( (Tree.find(1)) == false );
 }
 
