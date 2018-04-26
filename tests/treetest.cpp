@@ -46,6 +46,15 @@ TEST_CASE("insert and remove")
 }
 
 
+TEST_CASE("find")
+{
+  tree_t<int> Tree{10,12,11,14,7,9,6,3,4};
+  
+  REQUIRE( Tree.find(6) == true );
+  REQUIRE( Tree.find(1) == false );
+}
+
+
 TEST_CASE("initializer_list")
 {
    std::string input{
@@ -65,17 +74,4 @@ TEST_CASE("initializer_list")
   
   REQUIRE( input == ostream.str() );
 }
-
-
-TEST_CASE("find")
-{
-  tree_t<int> Tree{10,12,11,14,7,9,6,3,4};
-  
-  REQUIRE( Tree.find(6) == true );
-  REQUIRE( Tree.find(1) == false );
-}
-
-
-
-
 
