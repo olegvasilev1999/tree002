@@ -1,7 +1,7 @@
 #include <catch.hpp>
 #include <sstream>
 
-#include "tree_class.cpp"
+#include "tree.cpp"
 
 TEST_CASE("insert,print and remove")
 {   std::string input{"------------18\n----------------17\n--------16\n------------13\n----10\n--------4\n----------------3\n------------2\n"};
