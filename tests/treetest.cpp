@@ -46,7 +46,7 @@ TEST_CASE("insert and remove")
 }
 
 
-TEST_CASE("find")
+TEST_CASE("Find_")
 {
   tree_t<int> Tree{10,12,11,14,7,9,6,3,4};
   
@@ -55,7 +55,7 @@ TEST_CASE("find")
 }
 
 
-TEST_CASE("initializer_list")
+TEST_CASE("Initializer_list_")
 {
    std::string input{
       "------------14\n"
