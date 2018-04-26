@@ -1,9 +1,9 @@
 #include <catch.hpp>
 #include "tree.cpp"
 
-TEST_CASE("insert")
+TEST_CASE("insert and remove")
 {
-  std::string input{
+  std::string input1{
       "------------14\n"
       "--------12\n"
       "------------11\n"
@@ -13,6 +13,15 @@ TEST_CASE("insert")
       "------------6\n"
       "--------------------4\n"
       "----------------3\n"};
+  std::string input2{
+      "------------14\n"
+      "--------12\n"
+      "------------11\n"
+      "----10\n"
+      "------------9\n"
+      "--------7\n"
+      "-----------------4\n"
+      "-------------3\n"};
   tree_t<int> Tree;
   
   Tree.insert(10);
@@ -28,9 +37,14 @@ TEST_CASE("insert")
   std::ostringstream ostream;
   Tree.print( ostream );
   
-  REQUIRE( input == ostream.str() );
+  REQUIRE( input1 == ostream.str() );
   
+  REQUIRE(Tree.remove(6) == true);
+  Tree.print( ostream );
+  
+  REQUIRE( input1 + input2 == ostream.str() );
 }
+
 
 TEST_CASE("initializer_list")
 {
@@ -51,29 +65,9 @@ TEST_CASE("initializer_list")
   
   REQUIRE( input == ostream.str() );
   
+  
 }
 
-TEST_CASE("remove")
-{
-   std::string input{
-      "------------14\n"
-      "--------12\n"
-      "------------11\n"
-      "----10\n"
-      "------------9\n"
-      "--------7\n"
-      "-----------------4\n"
-      "-------------3\n"};
-  tree_t<int> Tree{10,12,11,14,7,9,6,3,4};
-  
-  REQUIRE(Tree.remove(6) == 1);
-  
-  std::ostringstream ostream;
-  Tree.print( ostream );
-  
-  REQUIRE( input == ostream.str() );
-  
-}
 
 TEST_CASE("operator ==")
 {
