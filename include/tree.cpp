@@ -32,7 +32,7 @@ private:
 		}
 
 	};
-
+private:
 	node_t * root_;
 
 public:
