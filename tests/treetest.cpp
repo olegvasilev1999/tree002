@@ -1,5 +1,5 @@
 #include <catch.hpp>
-#include "queue.cpp"
+#include "tree.cpp"
 
 TEST_CASE("insert")
 {
