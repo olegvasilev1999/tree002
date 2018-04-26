@@ -40,12 +40,6 @@ public:
 		root_ = nullptr;
 	}
 
-	tree_t(std::initializer_list<T> keys) {
-		for (T key : keys) {
-			insert(key);
-		}
-	}
-
 	bool compare(node_t * one, node_t * other, bool & result) const {
 		if (one == nullptr && other == nullptr) return result;
 		else if (one == nullptr || other == nullptr) {
@@ -190,6 +184,12 @@ public:
 		}
 		else {
 			root_->print_(stream, 0);
+		}
+	}
+	
+	tree_t(std::initializer_list<T> keys) {
+		for (T key : keys) {
+			insert(key);
 		}
 	}
 
