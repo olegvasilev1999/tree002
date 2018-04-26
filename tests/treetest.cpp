@@ -20,7 +20,7 @@ TEST_CASE("insert and remove")
       "----10\n"
       "------------9\n"
       "--------7\n"
-      "-----------------4\n"
+      "----------------4\n"
       "------------3\n"};
   tree_t<int> Tree;
   
@@ -39,7 +39,7 @@ TEST_CASE("insert and remove")
   
   REQUIRE( input1 == ostream.str() );
   
-  REQUIRE(Tree.remove(6) == true);
+  REQUIRE( Tree.remove(6) == true);
   Tree.print( ostream );
   
   REQUIRE( input1 + input2 == ostream.str() );
@@ -64,8 +64,6 @@ TEST_CASE("initializer_list")
   Tree.print( ostream );
   
   REQUIRE( input == ostream.str() );
-  
-  
 }
 
 
@@ -73,21 +71,11 @@ TEST_CASE("find")
 {
   tree_t<int> Tree{10,12,11,14,7,9,6,3,4};
   
-  REQUIRE( (Tree.find(6)) == true );
-  REQUIRE( (Tree.find(1)) == false );
+  REQUIRE( Tree.find(6) == true );
+  REQUIRE( Tree.find(1) == false );
 }
 
 
-TEST_CASE("operator ==")
-{
-  tree_t<int> Tree1{10,12,11,14,7,9,6,3,4};
-  tree_t<int> Tree2{10,12,11,14,7,9,6,3,4};
-  
-  REQUIRE( (Tree1 == Tree2) == true );
-  
-  Tree2.remove(6);
-  
-  REQUIRE( (Tree1 == Tree2) == false );
-}
+
 
 
