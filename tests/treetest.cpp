@@ -75,3 +75,16 @@ TEST_CASE("Initializer_list_")
   REQUIRE( input == ostream.str() );
 }
 
+
+TEST_CASE("operator ==")
+{
+  tree_t<int> Tree1{10,12,11,14,7,9,6,3,4};
+  tree_t<int> Tree2{10,12,11,14,7,9,6,3,4};
+  
+  REQUIRE( (Tree1 == Tree2) == true );
+  
+  Tree2.remove(6);
+  
+  REQUIRE( (Tree1 == Tree2) == false );
+}
+
