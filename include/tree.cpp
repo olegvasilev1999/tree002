@@ -188,6 +188,7 @@ public:
 	}
 	
 	tree_t(std::initializer_list<T> keys) {
+		root_ = nullptr;
 		for (T key : keys) {
 			insert(key);
 		}
